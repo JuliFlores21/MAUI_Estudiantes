@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_Estudiantes.Menu"
+             BackgroundColor="White">
+    <HorizontalStackLayout Spacing="20">
+            <VerticalStackLayout VerticalOptions="FillAndExpand" BackgroundColor="MediumPurple" Spacing="50">
+            <ImageButton Source="boton_listapagos.png"
+                         Clicked="OnClickListaPagos"
+                         BackgroundColor="Transparent"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         VerticalOptions="Center"
+                 HorizontalOptions="Center"/>
+            <ImageButton Source="boton_pagopension.png"
+                         Clicked="OnClickPagoPension"
+                         BackgroundColor="Transparent"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         VerticalOptions="Center"
+                 HorizontalOptions="Center"/>
+            <ImageButton Source="boton_cuenta.png"
+                         Clicked="OnClickCuenta"
+                         BackgroundColor="Transparent"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         VerticalOptions="Center"
+                 HorizontalOptions="Center"/>
+            <ImageButton Source="boton_salir.png"
+                         Clicked="OnClickSalir"
+                         BackgroundColor="Transparent"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         VerticalOptions="Center"
+                 HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout Spacing="30">
+            <Image Source="colegio_sello.jpg"
+                   WidthRequest="250"
+                   HeightRequest="100"/>
+            <Label Text="Bienvenido"
+                       FontFamily="arial"
+                       FontAttributes="Bold"
+                       FontSize="30"
+                       TextColor="Black"/>
+            <Frame CornerRadius="20" 
+                   BorderColor="Black"
+                   HasShadow="True"
+                   BackgroundColor="#FFD2D2">
+                <Grid>
+                    <!-- Tus elementos dentro del Grid van aquí -->
+                    <Label Text="Nombre del estudiante"
+                           FontSize="20"
+                           TextColor="Black"
+                           FontFamily="times"/>
+                </Grid>
+            </Frame>
+            <Label Text="Próxima Clase"
+                       FontFamily="arial"
+                       FontSize="20"
+                       TextColor="Black"/>
+            <Frame CornerRadius="20" 
+                   BorderColor="Black"
+                   HasShadow="True"
+                   BackgroundColor="#FFD2D2">
+                <Grid>
+                    <!-- Tus elementos dentro del Grid van aquí -->
+                    <Label Text="Has finalizado todas las clases de este día"
+                           HorizontalOptions="Center"
+                           TextColor="Black"/>
+                </Grid>
+            </Frame>
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Notificaciones"
+                       FontFamily="arial"
+                       FontSize="20"
+                       TextColor="Black"/>
+                <Frame BorderColor="Black"
+                       HasShadow="True"
+                       BackgroundColor="AliceBlue">
+                    <Grid>
+                        <VerticalStackLayout>
+                            <Label Text="Inicio de clase"
+                                   FontAttributes="Bold"
+                                   FontSize="14"
+                                   TextColor="Black"/>
+                            <Label Text="No hay clases próximas a empezar "
+                                   FontSize="14"
+                                   TextColor="Black"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+                <Frame BorderColor="Black"
+                       HasShadow="True"
+                       BackgroundColor="AliceBlue">
+                    <Grid>
+                        <VerticalStackLayout>
+                            <Label Text="¡Evalúa ahora! Seguimos mejorando"
+                                   FontAttributes="Bold"
+                                   FontSize="14"
+                                   TextColor="Black"/>
+                            <Label Text="¿Ya llenaste la encuesta? Aún seguimos "
+                                   FontSize="14"
+                                   TextColor="Black"/>
+                            <Label Text="mejorando, evalúa a tus docentes ahora."
+                                   FontSize="14"
+                                   TextColor="Black"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </HorizontalStackLayout>
+</ContentPage>

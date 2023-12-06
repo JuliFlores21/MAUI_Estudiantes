@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_Estudiantes.Cuenta"
+             BackgroundColor="White">
+    <VerticalStackLayout Spacing="30">
+        <ImageButton Source="boton_salir"
+                     HeightRequest="70"
+                     WidthRequest="100"
+                     Clicked="OnClickRegresar"
+                     HorizontalOptions="Start"/>
+        <Image Source="foto_perfil.jpg"
+               HeightRequest="200"
+               WidthRequest="200"
+               HorizontalOptions="Center"/>
+        <Label Text="Nombre del estudiante"
+               FontFamily="times"
+               FontSize="20"
+               TextColor="DarkRed"
+               HorizontalOptions="Center"/>
+        <Label Text="Primaria"
+               FontFamily="times"
+               FontSize="16"
+               TextColor="Gray"
+               HorizontalOptions="Center"/>
+        <Frame BorderColor="Black"
+               HasShadow="True"
+               BackgroundColor="LightGray">
+            <Grid>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Usuario: "
+                               FontFamily="arial"
+                               FontSize="14"
+                               TextColor="DarkRed"
+                               FontAttributes="Bold"/>
+                        <Label Text="user123@"
+                               FontFamily="arial"
+                               FontSize="14"
+                               TextColor="Black"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Cédula: "
+                               FontFamily="arial"
+                               FontSize="14"
+                               TextColor="DarkRed"
+                               FontAttributes="Bold"/>
+                        <Label Text="1726200908"
+                               FontFamily="arial"
+                               FontSize="14"
+                               TextColor="Black"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Grid>
+        </Frame>
+        <Label Text="Datos de Contacto:"
+               FontFamily="times"
+               FontSize="18"
+               TextColor="Black"/>
+        <Frame BorderColor="Black"
+               HasShadow="True"
+               BackgroundColor="LightGray">
+            <Grid>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Teléfono: "
+                               FontFamily="arial"
+                               FontSize="14"
+                               TextColor="DarkRed"
+                               FontAttributes="Bold"/>
+                        <Label Text="0983992908"
+                               FontFamily="arial"
+                               FontSize="14"
+                               TextColor="Black"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Dirección: "
+                               FontFamily="arial"
+                               FontSize="14"
+                               TextColor="DarkRed"
+                               FontAttributes="Bold"/>
+                        <Label Text="La Pampa"
+                               FontFamily="arial"
+                               FontSize="14"
+                               TextColor="Black"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Grid>
+        </Frame>
+        <Frame BorderColor="Black"
+        HasShadow="True"
+        BackgroundColor="LightGray">
+            <Grid>
+                <Button Text="Cambiar contraseña"
+                        BackgroundColor="DarkRed"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        Clicked="OnClickNuevaContrasenia"/>
+            </Grid>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

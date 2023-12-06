@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_Estudiantes.ListaPagos"
+             BackgroundColor="White">
+    <VerticalStackLayout Spacing="30">
+        <ImageButton Source="boton_salir.png"
+                     HeightRequest="70"
+                     WidthRequest="100"
+                     HorizontalOptions="Start"
+                     Clicked="OnClickRegresarMenu"/>
+        <Image Source="colegio_sello.jpg"
+               HorizontalOptions="CenterAndExpand"/>
+        <Label Text="Lista de pagos"
+               FontFamily="times"
+               FontSize="28"
+               TextColor="DarkRed"
+               HorizontalOptions="Center"/>
+        <ScrollView>
+            <ListView x:Name="pagosListView"
+              BackgroundColor="Black"
+              VerticalOptions="FillAndExpand">
+
+                <ListView.Header >
+                    <StackLayout Orientation="Horizontal" Margin="10" BackgroundColor="Black">
+                        <Label Text="ID de Pago" FontAttributes="Bold" TextColor="Black" />
+                        <Label Text="ID de Cuota" FontAttributes="Bold" TextColor="Black" />
+                        <Label Text="ID de Estudiante" FontAttributes="Bold" TextColor="Black" />
+                    </StackLayout>
+                </ListView.Header>
+
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="10" BackgroundColor="Black">
+                                <Label Text="2" TextColor="Black" />
+                                <Label Text="5" TextColor="Black" />
+                                <Label Text="3" TextColor="Black" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
