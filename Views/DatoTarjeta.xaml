@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_Estudiantes.DatoTarjeta"
+             BackgroundColor="White">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20">
+            <ImageButton Source="boton_salir.png"
+                 HeightRequest="70"
+                WidthRequest="100"
+                HorizontalOptions="Start"
+                Clicked="OnClickRegresarMenu"/>
+            <Image Source="colegio_sello.jpg"
+            HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Primer Paso: Llenar Datos de la tarjeta"
+           FontSize="18"
+           TextColor="Black"
+           FontAttributes="Bold"
+           FontFamily="times"
+           HorizontalOptions="Start"/>
+            <Frame BorderColor="Black"
+           HasShadow="True"
+           BackgroundColor="LightGray">
+                <Grid>
+                    <StackLayout Padding="20">
+                        <Label Text="Datos de Tarjeta"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        TextColor="DarkRed"
+                        HorizontalOptions="CenterAndExpand"
+                        Margin="0,0,0,20" />
+                        <Label Text="Ingrese el número de tarjeta:"
+                        TextColor="Black"
+                        FontSize="16"
+                        FontAttributes="Bold"/>
+                        <Entry Placeholder="XXXX - XXXX - XXXX - XXXX"
+                               PlaceholderColor="White"
+                         Keyboard="Numeric"
+                         Margin="0,0,0,10" 
+                        TextColor="Black"/>
+                        <Label Text="Ingrese el nombre:"
+                        TextColor="Black"
+                        FontSize="16"
+                        FontAttributes="Bold"/>
+                        <Entry Placeholder="Nombre de la Tarjeta"
+                               PlaceholderColor="White"
+                        Margin="0,0,0,10" 
+                        TextColor="Black"/>
+                        <Label Text="Ingrese la fecha de vencimiento:"
+                        TextColor="Black"
+                        FontSize="16"
+                        FontAttributes="Bold"/>
+                        <Entry Placeholder="(MM/AA)"
+                               PlaceholderColor="White"
+                        Keyboard="Numeric"
+                        Margin="0,0,0,10" 
+                        TextColor="Black"/>
+                        <Label Text="Ingrese el código de seguridad:"
+                        TextColor="Black"
+                        FontSize="16"
+                        FontAttributes="Bold"/>
+                        <Entry Placeholder="***"
+                               PlaceholderColor="White"
+                        Keyboard="Numeric"
+                        Margin="0,0,0,10" 
+                        TextColor="Black"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <Label Text="Segundo Paso: Seleccionar el número de cuotas a cancelar"
+            FontSize="18"
+            TextColor="Black"
+            FontAttributes="Bold"
+            FontFamily="times"
+           HorizontalOptions="Start"/>
+            <Frame BorderColor="Black"
+           HasShadow="True"
+           BackgroundColor="LightGray">
+                <Grid>
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout>
+                            <Label Text="Cuota Año Lectivo: "
+                           FontFamily="arial"
+                           FontSize="14"
+                           TextColor="DarkRed"
+                            FontAttributes="Bold"/>
+                            <Label Text="5"
+                           FontFamily="arial"
+                           FontSize="14"
+                           TextColor="Black"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout>
+                            <Label Text="Cuota Actual: "
+                                   FontFamily="arial"
+                                   FontSize="14"
+                                   TextColor="DarkRed"
+                                    FontAttributes="Bold"/>
+                            <Label Text="4"
+                                   FontFamily="arial"
+                                   FontSize="14"
+                                   TextColor="Black"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout>
+                            <Label Text="Ingrese el número de cuotas a cancelar: "
+                           FontFamily="arial"
+                           FontSize="14"
+                           TextColor="DarkRed"
+                            FontAttributes="Bold"/>
+                            <Entry Background="White"
+                            Keyboard="Numeric"
+                            Margin="0,0,0,10" 
+                            TextColor="Black"
+                           />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+            <Button Text="Guardar y Cancelar"
+                     BackgroundColor="DarkRed"
+                     TextColor="White"
+                     HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

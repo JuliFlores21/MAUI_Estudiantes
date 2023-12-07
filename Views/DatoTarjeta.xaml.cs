@@ -1,8 +1,8 @@
 namespace MAUI_Estudiantes;
 
-public partial class PagoPension : ContentPage
+public partial class DatoTarjeta : ContentPage
 {
-	public PagoPension()
+	public DatoTarjeta()
 	{
 		InitializeComponent();
 	}

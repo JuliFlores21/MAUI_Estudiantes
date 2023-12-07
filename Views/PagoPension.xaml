@@ -54,11 +54,11 @@
                                FontSize="20"
                                TextColor="DarkRed"
                                FontAttributes="Bold"/>
-                    <Button Text="pagar"
+                    <Button Text="Pagar"
                             BackgroundColor="DarkRed"
                             TextColor="White"
                             HorizontalOptions="Center"
-                            />
+                            Clicked="OnClickPagarPension"/>
                 </VerticalStackLayout>
             </Grid>
         </Frame>

@@ -63,22 +63,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="ContraseniaNueva.xaml">
+	  <MauiXaml Update="Views\ContraseniaNueva.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Cuenta.xaml">
+	  <MauiXaml Update="Views\Cuenta.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ListaPagos.xaml">
+	  <MauiXaml Update="Views\DatoTarjeta.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Login.xaml">
+	  <MauiXaml Update="Views\ListaPagos.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Menu.xaml">
+	  <MauiXaml Update="Views\Login.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PagoPension.xaml">
+	  <MauiXaml Update="Views\Menu.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PagoPension.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
