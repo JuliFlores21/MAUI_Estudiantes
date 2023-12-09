@@ -58,7 +58,9 @@
                        FontAttributes="Bold"/>
                         <Entry Placeholder="Ingrese su usuario"
                        Grid.Row="3"
-                       HorizontalOptions="Fill" />
+                       HorizontalOptions="Fill"
+                               Keyboard="Numeric"
+                               x:Name="id"/>
                         <Label Text="Contraseña"
                        Grid.Row="4"
                        FontSize="24"
@@ -68,7 +70,8 @@
                         <Entry Placeholder="Ingrese su contraseña"
                        IsPassword="True"
                        Grid.Row="5"
-                       HorizontalOptions="Fill" />
+                       HorizontalOptions="Fill" 
+                               x:Name="contrasenia"/>
                         <Button Text="Iniciar sesión"
                         Clicked="OnLoginClicked"
                         Grid.Row="6"

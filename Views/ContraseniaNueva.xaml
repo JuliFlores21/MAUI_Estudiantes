@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI_Estudiantes.ContraseniaNueva"
              BackgroundColor="White">
-    <StackLayout Padding="20">
+    <StackLayout Padding="20" Spacing="20">
         <Image Source="colegio_sello.jpg"
                 HorizontalOptions="CenterAndExpand"/>
         <Label Text="Cambiar Contraseña"
@@ -12,18 +12,19 @@
                TextColor="DarkRed"
                HorizontalOptions="CenterAndExpand"
                Margin="0,0,0,20" />
-        <Label Text="Ingrese la contraseña actual:"
+        <Label Text="Contraseña actual:"
                TextColor="Black"
                FontSize="16"
                FontAttributes="Bold"/>
-        <Entry Placeholder="Contraseña Actual"
-               IsPassword="True"
+        <Entry x:Name="Contrasenia"
+               IsEnabled="False"
                Margin="0,0,0,10" />
         <Label Text="Ingrese la nueva contraseña:"
                TextColor="Black"
                FontSize="16"
                FontAttributes="Bold"/>
         <Entry Placeholder="Nueva Contraseña"
+               x:Name="Contr1"
                IsPassword="True"
                Margin="0,0,0,10" />
         <Label Text="Ingrese nuevamente la contraseña:"
@@ -31,6 +32,7 @@
                FontSize="16"
                FontAttributes="Bold"/>
         <Entry Placeholder="Confirmar Nueva Contraseña"
+               x:Name="Contr2"
                IsPassword="True"
                Margin="0,0,0,10" />
 

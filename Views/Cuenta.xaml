@@ -13,12 +13,12 @@
                HeightRequest="200"
                WidthRequest="200"
                HorizontalOptions="Center"/>
-        <Label Text="Nombre del estudiante"
+        <Label x:Name="Nombre"
                FontFamily="times"
                FontSize="20"
                TextColor="DarkRed"
                HorizontalOptions="Center"/>
-        <Label Text="Primaria"
+        <Label Text="Secundaria"
                FontFamily="times"
                FontSize="16"
                TextColor="Gray"
@@ -34,7 +34,7 @@
                                FontSize="14"
                                TextColor="DarkRed"
                                FontAttributes="Bold"/>
-                        <Label Text="user123@"
+                        <Label x:Name="ID"
                                FontFamily="arial"
                                FontSize="14"
                                TextColor="Black"/>
@@ -45,7 +45,7 @@
                                FontSize="14"
                                TextColor="DarkRed"
                                FontAttributes="Bold"/>
-                        <Label Text="1726200908"
+                        <Label x:Name="Cedula"
                                FontFamily="arial"
                                FontSize="14"
                                TextColor="Black"/>
@@ -79,7 +79,7 @@
                                FontSize="14"
                                TextColor="DarkRed"
                                FontAttributes="Bold"/>
-                        <Label Text="La Pampa"
+                        <Label x:Name="Direccion"
                                FontFamily="arial"
                                FontSize="14"
                                TextColor="Black"/>

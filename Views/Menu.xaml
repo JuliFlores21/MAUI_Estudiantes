@@ -49,7 +49,7 @@
                    BackgroundColor="#FFD2D2">
                 <Grid>
                     <!-- Tus elementos dentro del Grid van aquí -->
-                    <Label Text="Nombre del estudiante"
+                    <Label x:Name="Nombre"
                            FontSize="20"
                            TextColor="Black"
                            FontFamily="times"/>
