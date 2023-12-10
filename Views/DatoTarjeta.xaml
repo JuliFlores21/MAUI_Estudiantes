@@ -24,70 +24,75 @@
                 <Grid>
                     <StackLayout Padding="20">
                         <Label Text="Datos de Tarjeta"
-                        FontSize="24"
-                        FontAttributes="Bold"
-                        TextColor="DarkRed"
-                        HorizontalOptions="CenterAndExpand"
-                        Margin="0,0,0,20" />
+                                FontSize="24"
+                                FontAttributes="Bold"
+                                TextColor="DarkRed"
+                                HorizontalOptions="CenterAndExpand"
+                                Margin="0,0,0,20" />
                         <Label Text="Ingrese el número de tarjeta:"
-                        TextColor="Black"
-                        FontSize="16"
-                        FontAttributes="Bold"/>
+                                TextColor="Black"
+                                FontSize="16"
+                                FontAttributes="Bold"/>
                         <Entry Placeholder="XXXX - XXXX - XXXX - XXXX"
                                PlaceholderColor="White"
-                         Keyboard="Numeric"
-                         Margin="0,0,0,10" 
-                        TextColor="Black"/>
+                                 Keyboard="Numeric"
+                                 Margin="0,0,0,10" 
+                                TextColor="Black"
+                               x:Name="numeroTarjeta"/>
                         <Label Text="Ingrese el nombre:"
-                        TextColor="Black"
-                        FontSize="16"
-                        FontAttributes="Bold"/>
+                                TextColor="Black"
+                                FontSize="16"
+                                FontAttributes="Bold"/>
                         <Entry Placeholder="Nombre de la Tarjeta"
                                PlaceholderColor="White"
-                        Margin="0,0,0,10" 
-                        TextColor="Black"/>
+                                Margin="0,0,0,10" 
+                                TextColor="Black"
+                               x:Name="nombreTarjeta"/>
                         <Label Text="Ingrese la fecha de vencimiento:"
-                        TextColor="Black"
-                        FontSize="16"
-                        FontAttributes="Bold"/>
+                                TextColor="Black"
+                                FontSize="16"
+                                FontAttributes="Bold"/>
                         <Entry Placeholder="(MM/AA)"
                                PlaceholderColor="White"
-                        Keyboard="Numeric"
-                        Margin="0,0,0,10" 
-                        TextColor="Black"/>
+                                Keyboard="Numeric"
+                                Margin="0,0,0,10" 
+                                TextColor="Black"
+                               x:Name="fechaTarjeta"/>
                         <Label Text="Ingrese el código de seguridad:"
-                        TextColor="Black"
-                        FontSize="16"
-                        FontAttributes="Bold"/>
+                                TextColor="Black"
+                                FontSize="16"
+                                FontAttributes="Bold"/>
                         <Entry Placeholder="***"
+                               IsPassword="True"
                                PlaceholderColor="White"
-                        Keyboard="Numeric"
-                        Margin="0,0,0,10" 
-                        TextColor="Black"/>
+                                Keyboard="Numeric"
+                                Margin="0,0,0,10" 
+                                TextColor="Black"
+                               x:Name="codigoTarjeta"/>
                     </StackLayout>
                 </Grid>
             </Frame>
             <Label Text="Segundo Paso: Seleccionar el número de cuotas a cancelar"
-            FontSize="18"
-            TextColor="Black"
-            FontAttributes="Bold"
-            FontFamily="times"
-           HorizontalOptions="Start"/>
+                    FontSize="18"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontFamily="times"
+                   HorizontalOptions="Start"/>
             <Frame BorderColor="Black"
-           HasShadow="True"
-           BackgroundColor="LightGray">
+                   HasShadow="True"
+                   BackgroundColor="LightGray">
                 <Grid>
                     <VerticalStackLayout>
                         <HorizontalStackLayout>
                             <Label Text="Cuota Año Lectivo: "
-                           FontFamily="arial"
-                           FontSize="14"
-                           TextColor="DarkRed"
-                            FontAttributes="Bold"/>
-                            <Label Text="5"
-                           FontFamily="arial"
-                           FontSize="14"
-                           TextColor="Black"/>
+                                   FontFamily="arial"
+                                   FontSize="14"
+                                   TextColor="DarkRed"
+                                    FontAttributes="Bold"/>
+                            <Label x:Name="cuotaSistema"
+                                   FontFamily="arial"
+                                   FontSize="14"
+                                   TextColor="Black"/>
                         </HorizontalStackLayout>
                         <HorizontalStackLayout>
                             <Label Text="Cuota Actual: "
@@ -95,22 +100,22 @@
                                    FontSize="14"
                                    TextColor="DarkRed"
                                     FontAttributes="Bold"/>
-                            <Label Text="4"
+                            <Label x:Name="cuotaEstudiante"
                                    FontFamily="arial"
                                    FontSize="14"
                                    TextColor="Black"/>
                         </HorizontalStackLayout>
                         <HorizontalStackLayout>
                             <Label Text="Ingrese el número de cuotas a cancelar: "
-                           FontFamily="arial"
-                           FontSize="14"
-                           TextColor="DarkRed"
-                            FontAttributes="Bold"/>
+                                   FontFamily="arial"
+                                   FontSize="14"
+                                   TextColor="DarkRed"
+                                    FontAttributes="Bold"/>
                             <Entry Background="White"
-                            Keyboard="Numeric"
-                            Margin="0,0,0,10" 
-                            TextColor="Black"
-                           />
+                                    Keyboard="Numeric"
+                                    Margin="0,0,0,10" 
+                                    TextColor="Black"
+                                   x:Name="cuotaPagar"/>
                         </HorizontalStackLayout>
                     </VerticalStackLayout>
                 </Grid>
@@ -118,7 +123,8 @@
             <Button Text="Guardar y Cancelar"
                      BackgroundColor="DarkRed"
                      TextColor="White"
-                     HorizontalOptions="Center"/>
+                     HorizontalOptions="Center"
+                    Clicked="OnClickPagarCuota"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

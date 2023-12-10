@@ -18,30 +18,35 @@
                HorizontalOptions="Center"/>
         <ScrollView>
             <ListView x:Name="pagosListView"
-              BackgroundColor="Black"
-              VerticalOptions="FillAndExpand">
-
-                <ListView.Header >
-                    <StackLayout Orientation="Horizontal" Margin="10" BackgroundColor="Black">
-                        <Label Text="ID de Pago" FontAttributes="Bold" TextColor="Black" />
-                        <Label Text="ID de Cuota" FontAttributes="Bold" TextColor="Black" />
-                        <Label Text="ID de Estudiante" FontAttributes="Bold" TextColor="Black" />
-                    </StackLayout>
-                </ListView.Header>
-
+                      BackgroundColor="Wheat"
+                      VerticalOptions="FillAndExpand"
+                      RowHeight="90">
                 <ListView.ItemTemplate >
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Margin="10" BackgroundColor="Black">
-                                <Label Text="2" TextColor="Black" />
-                                <Label Text="5" TextColor="Black" />
-                                <Label Text="3" TextColor="Black" />
-                            </StackLayout>
+                            <HorizontalStackLayout Spacing="20">
+                                <Image Source="boton_listapagos.png"
+                                       HeightRequest="60"
+                                       WidthRequest="60"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Start"/>
+                                <StackLayout Orientation="Vertical" Padding="1" >
+                                    <Label Text="ID Pago:" TextColor="DarkRed" />
+                                    <Label Text="ID Cuota:" TextColor="DarkRed" />
+                                    <Label Text="ID Estudiante:" TextColor="DarkRed" />
+                                    <Label Text="ID Pensión:" TextColor="DarkRed" />
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical"  Padding="1" >
+                                    <Label Text="{Binding Pag_id}" TextColor="Black" />
+                                    <Label Text="{Binding Pag_cuota}" TextColor="Black" />
+                                    <Label Text="{Binding Estudiante}" TextColor="Black" />
+                                    <Label Text="{Binding Pension}" TextColor="Black" />
+                                </StackLayout>
+                            </HorizontalStackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </ScrollView>
     </VerticalStackLayout>
 </ContentPage>

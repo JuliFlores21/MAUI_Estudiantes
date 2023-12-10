@@ -23,7 +23,7 @@
                TextColor="DarkRed"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center"/>-->
-        <Label Text="5"
+        <Label x:Name="cuotaSistema"
                FontFamily="Arial"
                FontSize="28"
                TextColor="Gray"
@@ -34,19 +34,19 @@
                TextColor="DarkRed"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center"/>
-        <Label Text="4"
+        <Label x:Name="cuotaEstudiante"
                FontFamily="Arial"
                FontSize="28"
                TextColor="Gray"
                HorizontalOptions="Center"/>
         <Label Text="  Seleccionar método de pago: "
-       FontFamily="arial"
-       FontSize="20"
-       TextColor="Black"
-       HorizontalOptions="Start"/>
+               FontFamily="arial"
+               FontSize="20"
+               TextColor="Black"
+               HorizontalOptions="Start"/>
         <Frame BorderColor="Black"
-       HasShadow="True"
-       BackgroundColor="LightGray">
+               HasShadow="True"
+               BackgroundColor="LightGray">
             <Grid>
                 <VerticalStackLayout>
                     <Label Text="Tarjeta de Crédito o Débito: "

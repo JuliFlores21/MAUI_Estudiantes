@@ -11,7 +11,12 @@ public partial class Login : ContentPage
 		InitializeComponent();
 		_APIService = apiservice;
 	}
-
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        id.Text = string.Empty;
+        contrasenia.Text = string.Empty;
+    }
     private async void OnLoginClicked(object sender, EventArgs e)
     {
         string contra = contrasenia.Text;
@@ -31,25 +36,21 @@ public partial class Login : ContentPage
         try
         {
             Estudiante existe = await _APIService.GetEstudiante(ID);
+            existe.contrasenia=contrasenia.Text;
             bool ingreso = await _APIService.Login(existe);
-
-            if (existe == null)
-            {
-                await DisplayAlert("Error", "Usuario no registrado", "Ok");
-            }
-            else if (!ingreso)
+             if (!ingreso)
             {
                 await DisplayAlert("Error", "Contraseña Incorrecta", "Ok");
                 contrasenia.Text = "";
             }
             else
             {
-                await Navigation.PushModalAsync(new Menu(existe));
+                await Navigation.PushModalAsync(new Menu(existe,_APIService));
             }
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Error", "Ha ocurrido un error", "Ok");
+            await DisplayAlert("Error", "El usuario no existe", "Ok");
         }
     }
 }

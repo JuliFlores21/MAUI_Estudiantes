@@ -19,7 +19,7 @@ namespace MAUI_Estudiantes.Services
 
         public ApiService()
         {
-            _baseUrl = "http://localhost:5203/api";
+            _baseUrl = "https://156a-2800-bf0-65-d6e-1f-a112-af34-4621.ngrok-free.app/api/";
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri(_baseUrl);
         }
@@ -184,7 +184,7 @@ namespace MAUI_Estudiantes.Services
 
         public async Task<bool> CambioContrasenia(Estudiante estudianteCambio, string nuevaContrasenia)
         {
-            var respuesta = await _httpClient.PutAsJsonAsync<Estudiante>($"Estudiante/cambioContrasenia/{nuevaContrasenia}", estudianteCambio);
+            var respuesta = await _httpClient.PutAsJsonAsync<Estudiante>($"Estudiante/cambioContrasenia/{nuevaContrasenia}/" , estudianteCambio);
             if (respuesta.IsSuccessStatusCode)
             {
                 return true;

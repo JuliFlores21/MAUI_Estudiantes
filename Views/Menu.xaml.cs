@@ -6,11 +6,13 @@ namespace MAUI_Estudiantes;
 public partial class Menu : ContentPage
 {
     private Estudiante ingreso;
+    private readonly ApiService _ApiService;
 
-    public Menu(Estudiante estudiante)
+    public Menu(Estudiante estudiante, ApiService apiservice)
 	{
 		InitializeComponent();
         ingreso= estudiante;
+        _ApiService = apiservice;
 	}
     protected override void OnAppearing()
     {
@@ -20,12 +22,12 @@ public partial class Menu : ContentPage
 
     private async void OnClickListaPagos(object sender, EventArgs e)
     {
-        await Navigation.PushModalAsync(new ListaPagos());
+        await Navigation.PushModalAsync(new ListaPagos(ingreso, _ApiService));
     }
 
     private async void OnClickCuenta(object sender, EventArgs e)
     {
-        await Navigation.PushModalAsync(new Cuenta(ingreso));
+        await Navigation.PushModalAsync(new Cuenta(ingreso,_ApiService));
     }
 
     private async void OnClickSalir(object sender, EventArgs e)
@@ -39,6 +41,6 @@ public partial class Menu : ContentPage
 
     private async void OnClickPagoPension(object sender, EventArgs e)
     {
-        await Navigation.PushModalAsync(new PagoPension(ingreso));
+        await Navigation.PushModalAsync(new PagoPension(ingreso, _ApiService));
     }
 }

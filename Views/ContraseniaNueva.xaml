@@ -18,6 +18,7 @@
                FontAttributes="Bold"/>
         <Entry x:Name="Contrasenia"
                IsEnabled="False"
+               IsPassword="False"
                Margin="0,0,0,10" />
         <Label Text="Ingrese la nueva contraseña:"
                TextColor="Black"
@@ -26,7 +27,8 @@
         <Entry Placeholder="Nueva Contraseña"
                x:Name="Contr1"
                IsPassword="True"
-               Margin="0,0,0,10" />
+               Margin="0,0,0,10" 
+               TextColor="Black"/>
         <Label Text="Ingrese nuevamente la contraseña:"
                TextColor="Black"
                FontSize="16"
@@ -34,7 +36,8 @@
         <Entry Placeholder="Confirmar Nueva Contraseña"
                x:Name="Contr2"
                IsPassword="True"
-               Margin="0,0,0,10" />
+               Margin="0,0,0,10" 
+               TextColor="Black"/>
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
             <Button Text="Cancelar"
