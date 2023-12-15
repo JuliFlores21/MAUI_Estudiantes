@@ -19,7 +19,7 @@ namespace MAUI_Estudiantes.Services
 
         public ApiService()
         {
-            _baseUrl = "https://156a-2800-bf0-65-d6e-1f-a112-af34-4621.ngrok-free.app/api/";
+            _baseUrl = "https://apicolegiopagos20231211072949.azurewebsites.net/api/";
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri(_baseUrl);
         }

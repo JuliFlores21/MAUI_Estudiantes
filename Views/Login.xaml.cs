@@ -1,5 +1,6 @@
 using ApiColegioPagos.Models;
 using MAUI_Estudiantes.Services;
+using Newtonsoft.Json;
 
 namespace MAUI_Estudiantes;
 
@@ -11,11 +12,33 @@ public partial class Login : ContentPage
 		InitializeComponent();
 		_APIService = apiservice;
 	}
-    protected override void OnAppearing()
+    protected async override void OnAppearing()
     {
         base.OnAppearing();
         id.Text = string.Empty;
         contrasenia.Text = string.Empty;
+        try
+        {
+            string storedJson = SecureStorage.GetAsync("estudiante").Result;
+
+            if (storedJson != null)
+            {
+                Estudiante estudiante = JsonConvert.DeserializeObject<Estudiante>(storedJson);
+                bool ingreso = await _APIService.Login(estudiante);
+                if (ingreso)
+                {
+                    await Navigation.PushModalAsync(new Menu(estudiante, _APIService));
+                }
+                else
+                {
+                    SecureStorage.Remove("estudiante");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+        }
     }
     private async void OnLoginClicked(object sender, EventArgs e)
     {
@@ -45,6 +68,8 @@ public partial class Login : ContentPage
             }
             else
             {
+                string estudiante = JsonConvert.SerializeObject(existe);
+                SecureStorage.SetAsync("estudiante", estudiante);
                 await Navigation.PushModalAsync(new Menu(existe,_APIService));
             }
         }

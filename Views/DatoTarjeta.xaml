@@ -106,6 +106,28 @@
                                    TextColor="Black"/>
                         </HorizontalStackLayout>
                         <HorizontalStackLayout>
+                            <Label Text="Número de Cuotas pendientes por pagar: "
+                                   FontFamily="arial"
+                                   FontSize="14"
+                                   TextColor="DarkRed"
+                                    FontAttributes="Bold"/>
+                            <Label x:Name="numeroCuota"
+                                   FontFamily="arial"
+                                   FontSize="14"
+                                   TextColor="Black"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout>
+                            <Label Text="Monto total por pagar: "
+                                   FontFamily="arial"
+                                   FontSize="14"
+                                   TextColor="DarkRed"
+                                    FontAttributes="Bold"/>
+                            <Label x:Name="montoPagar"
+                               FontFamily="arial"
+                               FontSize="14"
+                               TextColor="Black"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout>
                             <Label Text="Ingrese el número de cuotas a cancelar: "
                                    FontFamily="arial"
                                    FontSize="14"

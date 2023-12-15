@@ -35,6 +35,7 @@ public partial class Menu : ContentPage
         bool confirmacionCerrarSesion = await DisplayAlert("Confirmación", "¿Desea cerrar sesión?", "Sí", "No");
         if (confirmacionCerrarSesion)
         {
+            SecureStorage.Remove("estudiante");
             await Navigation.PopModalAsync();
         }     
     }

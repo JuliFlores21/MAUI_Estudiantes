@@ -9,6 +9,7 @@ public partial class DatoTarjeta : ContentPage
     private readonly ApiService _APIService;
     private Global sistema;
     private Pago pagoActual;
+    private Pension pension;
     public DatoTarjeta(Estudiante estudiante, ApiService apiService, Global global, Pago pago)
 	{
 		InitializeComponent();
@@ -17,11 +18,24 @@ public partial class DatoTarjeta : ContentPage
         sistema = global;
         pagoActual= pago;
 	}
-    protected override void OnAppearing()
+    protected override async void OnAppearing()
     {
         base.OnAppearing();
         cuotaSistema.Text=sistema.Glo_valor.ToString();
         cuotaEstudiante.Text=pagoActual.Pag_cuota.ToString();
+        pension = await _APIService.GetPension(pagoActual.Pension);
+        int diferencia = sistema.Glo_valor - pagoActual.Pag_cuota;
+        float total = 0;
+        if (diferencia < 0)
+        {
+            diferencia=0;
+        }
+        if (pension != null)
+        {
+             total = pension.Pen_valor * diferencia;
+        }
+        montoPagar.Text=total.ToString();
+        numeroCuota.Text=diferencia.ToString();
     }
 
     private async void OnClickRegresarMenu(object sender, EventArgs e)
@@ -48,7 +62,7 @@ public partial class DatoTarjeta : ContentPage
             return;
         }
 
-        if (numT.Length < 16)
+        if (numT.Length < 10)
         {
             await DisplayAlert("Error", "El número de tarjeta debe tener 16 dígitos", "Ok");
             return;
@@ -60,13 +74,13 @@ public partial class DatoTarjeta : ContentPage
             return;
         }
 
-        if(diferencia == 0)
+        if(diferencia <= 0)
         {
             await DisplayAlert("Notificacion", "Usted está al día en el pago de las cuotas", "Ok");
             await Navigation.PopModalAsync();
         }else if (diferencia < cuotaP)
         {
-            await DisplayAlert("Error", "No puede ingresar una cuota mayor a la del sistema", "Ok");
+            await DisplayAlert("Error", "No puede ingresar un número de cuota mayor a las pendientes", "Ok");
             return;
         }else if (cuotaP == 0)
         {
@@ -75,10 +89,18 @@ public partial class DatoTarjeta : ContentPage
         }
         else
         {
-            List<Pago> pagos = await _APIService.pagar(ingreso.Est_id, cuotaP);
-            await DisplayAlert("Aprobado", "Se registró correctamente su transacción", "Ok");
-            await Navigation.PopModalAsync();
+            bool confirmarPago = await DisplayAlert("Confirmación", "¿Desea proceder con el pago?", "Sí", "No");
+            if (confirmarPago)
+            {
+                List<Pago> pagos = await _APIService.pagar(ingreso.Est_id, cuotaP);
+                await DisplayAlert("Aprobado", "Se registró correctamente su transacción", "Ok");
+                await Navigation.PopModalAsync();
+            }
+            else
+            {
+                await DisplayAlert("Notificación", "Transacción rechazada", "Ok");
+                await Navigation.PopModalAsync();
+            }
         }
-
     }
 }

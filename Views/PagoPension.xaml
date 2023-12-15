@@ -3,64 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI_Estudiantes.PagoPension"
              BackgroundColor="White">
-    <VerticalStackLayout Spacing="15">
-        <ImageButton Source="boton_salir.png"
-             HeightRequest="70"
-             WidthRequest="100"
-             HorizontalOptions="Start"
-             Clicked="OnClickRegresarMenu"/>
-        <Image Source="colegio_sello.jpg"
-               HorizontalOptions="CenterAndExpand"/>
-        <Label Text="Número de Cuota del Año Lectivo"
-               FontFamily="times"
-               FontSize="28"
-               TextColor="DarkRed"
-               HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Center"/>
-        <!--<Label Text="Lectivo"
-               FontFamily="times"
-               FontSize="28"
-               TextColor="DarkRed"
-               HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Center"/>-->
-        <Label x:Name="cuotaSistema"
-               FontFamily="Arial"
-               FontSize="28"
-               TextColor="Gray"
-               HorizontalOptions="Center"/>
-        <Label Text="Número de Cuota del Estudiante"
-               FontFamily="times"
-               FontSize="28"
-               TextColor="DarkRed"
-               HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Center"/>
-        <Label x:Name="cuotaEstudiante"
-               FontFamily="Arial"
-               FontSize="28"
-               TextColor="Gray"
-               HorizontalOptions="Center"/>
-        <Label Text="  Seleccionar método de pago: "
-               FontFamily="arial"
-               FontSize="20"
-               TextColor="Black"
-               HorizontalOptions="Start"/>
-        <Frame BorderColor="Black"
-               HasShadow="True"
-               BackgroundColor="LightGray">
-            <Grid>
-                <VerticalStackLayout>
-                    <Label Text="Tarjeta de Crédito o Débito: "
+    <ScrollView>
+        <VerticalStackLayout Spacing="15">
+            <ImageButton Source="boton_salir.png"
+                         HeightRequest="70"
+                         WidthRequest="100"
+                         HorizontalOptions="Start"
+                         Clicked="OnClickRegresarMenu"/>
+            <Image Source="colegio_sello.jpg"
+                    HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Número de Cuota del Año Lectivo"
+                   FontFamily="times"
+                   FontSize="28"
+                   TextColor="DarkRed"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+            <Label x:Name="cuotaSistema"
+                   FontFamily="Arial"
+                   FontSize="28"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"/>
+            <Label Text="Número de Cuota del Estudiante"
+                   FontFamily="times"
+                   FontSize="28"
+                   TextColor="DarkRed"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+            <Label x:Name="cuotaEstudiante"
+                   FontFamily="Arial"
+                   FontSize="28"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"/>
+            <Label x:Name="AldiaONo"
+                   FontFamily="times"
+                   FontSize="28"
+                   TextColor="DarkRed"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+            <Label Text="  Seleccionar método de pago: "
+                   FontFamily="arial"
+                   FontSize="20"
+                   TextColor="Black"
+                   HorizontalOptions="Start"/>
+            <Frame BorderColor="Black"
+                   HasShadow="True"
+                   BackgroundColor="LightGray">
+                <Grid>
+                    <VerticalStackLayout>
+                        <Label Text="Tarjeta de Crédito o Débito: "
                                FontFamily="arial"
                                FontSize="20"
                                TextColor="DarkRed"
                                FontAttributes="Bold"/>
-                    <Button Text="Pagar"
-                            BackgroundColor="DarkRed"
-                            TextColor="White"
-                            HorizontalOptions="Center"
-                            Clicked="OnClickPagarPension"/>
-                </VerticalStackLayout>
-            </Grid>
-        </Frame>
-    </VerticalStackLayout>
+                        <Button Text="Pagar"
+                                BackgroundColor="DarkRed"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                Clicked="OnClickPagarPension"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

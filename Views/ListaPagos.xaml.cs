@@ -1,5 +1,6 @@
 using ApiColegioPagos.Models;
 using MAUI_Estudiantes.Services;
+using MAUI_Estudiantes.ViewModel;
 using System.Collections.ObjectModel;
 
 namespace MAUI_Estudiantes;
@@ -20,7 +21,30 @@ public partial class ListaPagos : ContentPage
         try
         {
             List<Pago> listapagos = await _APIService.GetPagosEstudiante(ingreso.Est_id);
-            var pagos = new ObservableCollection<Pago>(listapagos);
+            List<Pension> listaPension = new List<Pension>();
+            foreach(Pago pago in listapagos)
+            {
+                Pension p = await _APIService.GetPension(pago.Pension);
+                if (p != null)
+                {
+                    listaPension.Add(p);
+                }
+            }
+            List<PagoPensionViewModel> listaCombinada = new List<PagoPensionViewModel>();
+            foreach (Pago pago in listapagos)
+            {
+                Pension pension = listaPension.FirstOrDefault(p => p.Pen_id == pago.Pension);
+                if (pension != null)
+                {
+                    PagoPensionViewModel viewModel = new PagoPensionViewModel
+                    {
+                        Pago = pago,
+                        Pension = pension
+                    };
+                    listaCombinada.Add(viewModel);
+                }
+            }
+            var pagos = new ObservableCollection<PagoPensionViewModel>(listaCombinada);
             pagosListView.ItemsSource = pagos;
         }
         catch(Exception ex) {

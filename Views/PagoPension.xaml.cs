@@ -23,6 +23,16 @@ public partial class PagoPension : ContentPage
         pagoActual = pagosEstudiante.Last();
         cuotaSistema.Text = sistema.Glo_valor.ToString();
         cuotaEstudiante.Text=pagoActual.Pag_cuota.ToString();
+        int diferencia = sistema.Glo_valor - pagoActual.Pag_cuota;
+        if (diferencia <= 0)
+        {
+            diferencia=0;
+            AldiaONo.Text = "¡Estás al día en el pago de Pensión!";
+        }
+        else
+        {
+            AldiaONo.Text = "Tienes pendiente el pago de " + diferencia + " cuota/s";
+        }
         
     }
 
